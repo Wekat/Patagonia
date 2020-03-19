@@ -82,8 +82,9 @@ body {
     max-height: 648px;
     height: 100%;
 
-    & img {
+    & picture {
       height: 100%;
+      width: 100%;
     }
   }
 }
