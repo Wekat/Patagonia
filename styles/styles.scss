@@ -15,6 +15,7 @@
   line-height: 102px;
   letter-spacing: -2px;
   color: #242635;
+  margin: 0;
 }
 
 %paragraph_text {
@@ -24,25 +25,26 @@
   font-size: 22px;
   line-height: 33px;
   color: #242635;
+  margin-top: 7%;
+  margin-bottom: 0;
 }
 
 body {
   height: 100vh;
   width: 100vw;
-  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .section {
-  max-width: 90%;
-  height: 90%;
+  width: 90%;
+  height: 85%;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 
   &__text {
     height: 100%;
@@ -75,7 +77,6 @@ body {
   
       & p {
         @extend %paragraph_text;
-        margin-top: 16vh;
       }
     }
   }
@@ -87,6 +88,11 @@ body {
     height: 100%;
     background-image: url(../images/Image_desktop.png);
   }
+}
+
+.logo {
+  font-family: 'Liu Jian Mao Cao', cursive;
+  font-size: 40px;
 }
   
 .topnav {
@@ -108,15 +114,45 @@ body {
 }
   
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  font-size: 30px;
+  font-family: 'Liu Jian Mao Cao', cursive;
 }
   
 .topnav .icon {
   display: none;
 }
+
+@media screen and (max-width: 768px) {
+  .section__pic {
+    background-image: url(../images/Image_tablet.png);
+    background-repeat: no-repeat;
+  }
+
+  .section {
+    flex-wrap: wrap;
+  }
+
+  .section__text {
+    height: auto;
+    margin-right: 0;
+
+    &--text {
+      text-align: center;
+      margin-top: 20vh;
+      margin-bottom: 5vh;
+  
+      & p {
+        margin-top: 5%;
+      }
+    }
+  }
+}
   
 @media screen and (max-width: 400px) {
+  .section {
+    width: 80%;
+  }
+
   .topnav a {
     display: none;
   }
@@ -133,5 +169,21 @@ body {
     position: absolute;
     right: 0;
     top: 0;
+  }
+
+  .section__text--text h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .section__text--text p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .section__pic {
+    background-image: url(../images/Image_mobile.png);
   }
 }
